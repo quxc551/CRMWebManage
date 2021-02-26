@@ -8,8 +8,11 @@
         <Row class="margin-tb">
             <Button>新建用户</Button>
         </Row>
-        <Table :columns="columns">
-
+        <Table :columns="columns" :data="users">
+            <template v-slot:action>
+                <Button>编辑</Button>
+                <Button class="margin-left-sm" type="error">删除</Button>
+            </template>
         </Table>
     </div>
 </template>
@@ -42,6 +45,15 @@ export default {
                 {
                     title: '操作',
                     slot: 'action'
+                }
+            ],
+            users: [
+                {
+                    name: "张三",
+                    mobile: "15102425963",
+                    email: "test@163.com",
+                    state: "正常",
+                    created: "2020-9-6 20:02:36"
                 }
             ]
         }

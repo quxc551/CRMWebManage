@@ -61,8 +61,11 @@
                         <BreadcrumbItem>Layout</BreadcrumbItem>
                     </Breadcrumb>
                     <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
-                        <router-view></router-view>
+                        <transition name="fade" mode="out-in" :duration="250">
+                            <router-view></router-view>
+                        </transition>
                     </Content>
+                    <Footer class="layout-footer-center">&copy;&nbsp;本开发组版权所有</Footer>
                 </Layout>
             </Layout>
         </Layout>
@@ -97,5 +100,8 @@ export default {
     width: 420px;
     margin: 0 auto;
     margin-right: 20px;
+}
+.layout-footer-center{
+    text-align: center;
 }
 </style>
