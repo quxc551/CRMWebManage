@@ -26,7 +26,7 @@
             </Header>
             <Layout>
                 <Sider hide-trigger :style="{background: '#fff'}">
-                    <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
+                    <Menu :active-name="activeName" theme="light" width="auto" :open-names="openNames" ref="side-menu" accordion>
                         <Submenu name="1">
                             <template slot="title">
                                 <Icon type="ios-navigate"></Icon>
@@ -44,13 +44,13 @@
                             <MenuItem name="2-1">Option 1</MenuItem>
                             <MenuItem name="2-2">Option 2</MenuItem>
                         </Submenu>
-                        <Submenu name="3">
+                        <Submenu name="system">
                             <template slot="title">
                                 <Icon type="ios-analytics"></Icon>
                                 系统配置
                             </template>
-                            <MenuItem name="3-1" :to="{name: 'Users'}">用户管理</MenuItem>
-                            <MenuItem name="3-2" :to="{name: 'Roles'}">角色管理</MenuItem>
+                            <MenuItem name="Users" :to="{name: 'Users'}">用户管理</MenuItem>
+                            <MenuItem name="Roles" :to="{name: 'Roles'}">角色管理</MenuItem>
                         </Submenu>
                     </Menu>
                 </Sider>
@@ -74,7 +74,20 @@
 
 <script>
 export default {
-
+    created() {
+        this.activeName = this.$route.name;
+        this.openNames = [this.menuOrderMap[this.activeName]];
+    },
+    data() {
+        return {
+            activeName: undefined,
+            openNames: undefined,
+            menuOrderMap: {
+                Users: "system",
+                Roles: "system"
+            }
+        }
+    }
 }
 </script>
 

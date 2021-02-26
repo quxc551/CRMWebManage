@@ -9,7 +9,7 @@ const axios = require("axios")
 export default {
     name: "app",
     components: {},
-    created(){
+    created() {
         if (process.env.NODE_ENV !== 'production') {
             this.$Notice.info({
                 title: "当前处于非生产模式",
@@ -18,15 +18,16 @@ export default {
             });
             axios.get("/api/test/mytest")
             .then(res => {
-                console.log(res);
                 this.$Notice.success({
-                    title: "成功与服务器取得连接。"
+                    title: "成功连接服务器。",
+                    desc: res.status + '：' + res.statusText
                 });
             })
             .catch(err => {
                 console.log(err);
                 this.$Notice.error({
-                    title: "未能与服务器建立连接。"
+                    title: "未能与服务器建立连接。",
+                    desc: "请在控制台查看详情"
                 });
             })
         }
