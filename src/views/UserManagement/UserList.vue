@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Row>
+        <Row class="margin-bottom-lg">
             <i-col span="6">
                 <Input placeholder="搜索用户名" search />
             </i-col>
@@ -10,16 +10,20 @@
         </Row>
         <Table :columns="columns" :data="users">
             <template v-slot:action>
-                <Button>编辑</Button>
+                <Button @click="showUserDetail">编辑</Button>
                 <Button class="margin-left-sm" type="error">删除</Button>
             </template>
         </Table>
+        <Page class="margin-top" />
+        <Drawer title="用户详情" :mask-closable="false" v-model="showDrawer" width="720">
+
+        </Drawer>
     </div>
 </template>
 
 <script>
 export default {
-    data(){
+    data() {
         return {
             columns: [
                 {
@@ -55,7 +59,13 @@ export default {
                     state: "正常",
                     created: "2020-9-6 20:02:36"
                 }
-            ]
+            ],
+            showDrawer: false
+        }
+    },
+    methods: {
+        showUserDetail() {
+            this.showDrawer = true;
         }
     }
 

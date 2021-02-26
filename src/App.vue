@@ -39,6 +39,18 @@ export default {
     margin-left: 5px;
 }
 
+.margin-bottom-lg {
+    margin-bottom: 12px;
+}
+
+.margin-bottom {
+    margin-bottom: 8px;
+}
+
+.margin-top {
+    margin-top: 8px;
+}
+
 .margin-tb {
     margin-top: 8px;
     margin-bottom: 8px;
