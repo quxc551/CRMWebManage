@@ -30,16 +30,16 @@
                         <Submenu name="1">
                             <template slot="title">
                                 <Icon type="ios-navigate"></Icon>
-                                Item 1
+                                客户管理
                             </template>
-                            <MenuItem name="1-1">Option 1</MenuItem>
+                            <MenuItem name="1-1">客户列表</MenuItem>
                             <MenuItem name="1-2">Option 2</MenuItem>
                             <MenuItem name="1-3">Option 3</MenuItem>
                         </Submenu>
                         <Submenu name="2">
                             <template slot="title">
                                 <Icon type="ios-keypad"></Icon>
-                                Item 2
+                                合同管理
                             </template>
                             <MenuItem name="2-1">Option 1</MenuItem>
                             <MenuItem name="2-2">Option 2</MenuItem>
@@ -47,10 +47,10 @@
                         <Submenu name="3">
                             <template slot="title">
                                 <Icon type="ios-analytics"></Icon>
-                                Item 3
+                                系统配置
                             </template>
-                            <MenuItem name="3-1">Option 1</MenuItem>
-                            <MenuItem name="3-2">Option 2</MenuItem>
+                            <MenuItem name="3-1" :to="{name: 'Users'}">用户管理</MenuItem>
+                            <MenuItem name="3-2" :to="{name: 'Roles'}">角色管理</MenuItem>
                         </Submenu>
                     </Menu>
                 </Sider>

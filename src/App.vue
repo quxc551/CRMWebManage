@@ -12,7 +12,8 @@ export default {
 </script>
 
 <style>
-#app {
-    
+.margin-tb {
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 </style>

@@ -19,9 +19,14 @@ const routes = [
         component: () => import(/* webpackChunkName: "layout" */ '@/layouts/Admin.vue'),
         children: [
             {
-                path: 'userlist',
-                name: 'UserList',
+                path: 'users',
+                name: 'Users',
                 component: () => import(/* webpackChunkName: "user" */ '@/views/UserManagement/UserList.vue'),
+            },
+            {
+                path: 'roles',
+                name: 'Roles',
+                component: () => import(/* webpackChunkName: "user" */ '@/views/UserManagement/Role.vue'),
             }
         ]
     }
