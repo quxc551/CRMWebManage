@@ -27,22 +27,29 @@
             <Layout>
                 <Sider hide-trigger :style="{background: '#fff'}">
                     <Menu :active-name="activeName" theme="light" width="auto" :open-names="openNames" ref="side-menu" accordion>
+                        <Submenu name="0">
+                            <template slot="title">
+                                <Icon type="ios-navigate"></Icon>
+                                房屋管理
+                            </template>
+                            <MenuItem name="0-1">房屋列表</MenuItem>
+                        </Submenu>
                         <Submenu name="1">
                             <template slot="title">
                                 <Icon type="ios-navigate"></Icon>
                                 客户管理
                             </template>
                             <MenuItem name="1-1">客户列表</MenuItem>
-                            <MenuItem name="1-2">Option 2</MenuItem>
-                            <MenuItem name="1-3">Option 3</MenuItem>
+                            <MenuItem name="1-2">客户关系</MenuItem>
                         </Submenu>
                         <Submenu name="2">
                             <template slot="title">
                                 <Icon type="ios-keypad"></Icon>
                                 合同管理
                             </template>
-                            <MenuItem name="2-1">Option 1</MenuItem>
-                            <MenuItem name="2-2">Option 2</MenuItem>
+                            <MenuItem name="2-1">合同列表</MenuItem>
+                            <MenuItem name="2-2">缴费通知单</MenuItem>
+                            <MenuItem name="2-3">发票管理</MenuItem>
                         </Submenu>
                         <Submenu name="system">
                             <template slot="title">
