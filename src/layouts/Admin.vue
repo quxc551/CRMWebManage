@@ -32,7 +32,8 @@
                                 <Icon type="ios-navigate"></Icon>
                                 房屋管理
                             </template>
-                            <MenuItem name="0-1">房屋列表</MenuItem>
+                            <MenuItem name="0-1" :to="{name: 'HouseList'}">房屋列表</MenuItem>
+                            <MenuItem name="0-2" :to="{name: 'BuildingList'}">楼宇列表</MenuItem>
                         </Submenu>
                         <Submenu name="1">
                             <template slot="title">
